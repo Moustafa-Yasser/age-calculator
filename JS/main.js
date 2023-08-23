@@ -24,12 +24,12 @@ function validate() {
       formParent.querySelector("small").innerText = "this field is required.";
       i.parentElement.querySelector(".lap").style.color = "#cd0000ad";
       validator = false;
-    } else if (inputMonth.value > 12) {
+    } else if (inputMonth.value > 12 || inputMonth.value > month) {
       inputMonth.style.borderColor = "#cd0000ad";
       inputMonth.parentElement.querySelector("small").innerText =
         "must be valid month.";
       validator = false;
-    } else if (inputDay.value > 31) {
+    } else if (inputDay.value > 31 || inputDay.value > date.getDate()) {
       inputDay.style.borderColor = "#cd0000ad";
       inputDay.parentElement.querySelector("small").innerText =
         "must be valid day.";
@@ -42,6 +42,7 @@ function validate() {
     } else {
       i.style.borderColor = "#ddd";
       formParent.querySelector("small").innerText = "";
+      i.parentElement.querySelector(".lap").style.color = "hsl(0, 1%, 44%)";
       validator = true;
     }
   });
