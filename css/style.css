@@ -1,0 +1,152 @@
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 32px;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--Light-grey);
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: var(--White);
+  padding: 30px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  border-bottom-right-radius: 150px;
+}
+
+form {
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  gap: 15px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input {
+  width: 100px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+input:focus {
+  border-color: var(--Purple);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  font-style: italic;
+  margin: 15px 0px;
+}
+
+.result span span {
+  color: var(--Purple);
+}
+
+.arrow {
+  position: absolute;
+  bottom: -75px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  background-color: var(--Purple);
+  border-radius: 50%;
+  width: 50px;
+  align-self: end;
+  position: relative;
+  bottom: 25px;
+  transition: .2s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--Off-black);
+}
+
+.one {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  color: var(--Smokey-grey);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+small {
+  color: #cd0000;
+  font-size: 10px !important;
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .parent {
+    width: 320px;
+    padding: 20px;
+    height: 360px;
+  }
+
+  input {
+    width: 75px;
+  }
+
+  button {
+    align-self: center;
+  }
+
+  small {
+    font-size: 8px !important;
+  }
+
+  .arrow {
+    bottom: -90px;
+  }
+
+  .result {
+    margin: 50px 0px
+  }
+}
